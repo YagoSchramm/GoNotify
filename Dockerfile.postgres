@@ -1,0 +1,9 @@
+FROM postgres:17-alpine
+
+ENV POSTGRES_DB=gymtracker
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+
+COPY infrastructure/script/migrate/001-create-tables.up.sql /docker-entrypoint-initdb.d/001-create-tables.sql
+
+EXPOSE 5432
