@@ -4,8 +4,8 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/YagoSchramm/GymTracker/domain/entity"
-	"github.com/YagoSchramm/GymTracker/domain/entity/derr"
+	"github.com/YagoSchramm/GoNotify/domain/entity"
+	"github.com/YagoSchramm/GoNotify/domain/entity/derr"
 )
 
 func ValidateLogin(credentials entity.UserCredentials) error {

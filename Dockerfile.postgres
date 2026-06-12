@@ -1,6 +1,6 @@
 FROM postgres:17-alpine
 
-ENV POSTGRES_DB=gymtracker
+ENV POSTGRES_DB=gonotify
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=postgres
 

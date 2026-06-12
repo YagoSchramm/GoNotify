@@ -4,13 +4,13 @@ import (
 	"context"
 	"errors"
 
-	"github.com/YagoSchramm/GymTracker/domain/entity"
-	"github.com/YagoSchramm/GymTracker/domain/entity/derr"
-	"github.com/YagoSchramm/GymTracker/domain/rules"
-	"github.com/YagoSchramm/GymTracker/domain/usecase"
-	"github.com/YagoSchramm/GymTracker/infrastructure/datastore/repository"
-	"github.com/YagoSchramm/GymTracker/infrastructure/foundation/hash"
-	"github.com/YagoSchramm/GymTracker/infrastructure/foundation/jwt"
+	"github.com/YagoSchramm/GoNotify/domain/entity"
+	"github.com/YagoSchramm/GoNotify/domain/entity/derr"
+	"github.com/YagoSchramm/GoNotify/domain/rules"
+	"github.com/YagoSchramm/GoNotify/domain/usecase"
+	"github.com/YagoSchramm/GoNotify/infrastructure/datastore/repository"
+	"github.com/YagoSchramm/GoNotify/infrastructure/foundation/hash"
+	"github.com/YagoSchramm/GoNotify/infrastructure/foundation/jwt"
 	"github.com/google/uuid"
 )
 

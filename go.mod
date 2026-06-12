@@ -1,4 +1,4 @@
-module github.com/YagoSchramm/GymTracker
+module github.com/YagoSchramm/GoNotify
 
 go 1.25.6
 

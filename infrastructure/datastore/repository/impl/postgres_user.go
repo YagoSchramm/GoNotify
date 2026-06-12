@@ -5,9 +5,9 @@ import (
 	"database/sql"
 	_ "embed"
 
-	"github.com/YagoSchramm/GymTracker/domain/entity"
-	"github.com/YagoSchramm/GymTracker/domain/entity/derr"
-	"github.com/YagoSchramm/GymTracker/infrastructure/datastore/repository"
+	"github.com/YagoSchramm/GoNotify/domain/entity"
+	"github.com/YagoSchramm/GoNotify/domain/entity/derr"
+	"github.com/YagoSchramm/GoNotify/infrastructure/datastore/repository"
 	"github.com/google/uuid"
 )
 
