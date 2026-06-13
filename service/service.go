@@ -5,11 +5,11 @@ import (
 	"os"
 	"strings"
 
-	usecaseimpl "github.com/YagoSchramm/GymTracker/domain/usecase/impl"
-	repoimpl "github.com/YagoSchramm/GymTracker/infrastructure/datastore/repository/impl"
-	"github.com/YagoSchramm/GymTracker/infrastructure/foundation/db"
-	approuter "github.com/YagoSchramm/GymTracker/infrastructure/router"
-	modules "github.com/YagoSchramm/GymTracker/infrastructure/router/module"
+	usecaseimpl "github.com/YagoSchramm/GoNotify/domain/usecase/impl"
+	repoimpl "github.com/YagoSchramm/GoNotify/infrastructure/datastore/repository/impl"
+	"github.com/YagoSchramm/GoNotify/infrastructure/foundation/db"
+	approuter "github.com/YagoSchramm/GoNotify/infrastructure/router"
+	modules "github.com/YagoSchramm/GoNotify/infrastructure/router/module"
 	"github.com/gorilla/mux"
 )
 

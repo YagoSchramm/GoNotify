@@ -5,7 +5,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/YagoSchramm/GymTracker/domain/entity/derr"
+	"github.com/YagoSchramm/GoNotify/domain/entity/derr"
 )
 
 type SucessfulResponse struct {

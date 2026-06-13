@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 
-	"github.com/YagoSchramm/GymTracker/domain/entity"
+	"github.com/YagoSchramm/GoNotify/domain/entity"
 	"github.com/google/uuid"
 )
 

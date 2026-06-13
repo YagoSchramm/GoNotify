@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/YagoSchramm/GymTracker/service"
+	"github.com/YagoSchramm/GoNotify/service"
 )
 
 func main() {
