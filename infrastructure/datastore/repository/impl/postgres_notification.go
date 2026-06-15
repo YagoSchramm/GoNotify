@@ -20,7 +20,7 @@ var findNotificationByIDQuery string
 //go:embed _query/notification/find_notifications_by_trigger_id.sql
 var findNotificationsByTriggerIDQuery string
 
-//go:embed _query/notification/find_notification_by_idempotency_key.sql
+//go:embed _query/notification/find_notifications_by_idempotency_key.sql
 var findNotificationByIdempotencyKeyQuery string
 
 //go:embed _query/notification/update_notification_status.sql
