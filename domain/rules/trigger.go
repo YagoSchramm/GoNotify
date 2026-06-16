@@ -13,7 +13,7 @@ func ValidateEventType(eventType string) error {
 	}
 	return nil
 }
-func ValidateTriggerConfig(t *entity.Trigger) error {
+func ValidateConfig(t *entity.Trigger) error {
 	switch t.DestinationType {
 	case entity.DestinationEmail:
 		to, ok := t.Config["to"].(string)
