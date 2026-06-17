@@ -62,19 +62,27 @@ func Build() (*mux.Router, func(), error) {
 	}
 
 	authRepository := repoimpl.NewAuthRepository(dbConn)
+	triggerRepository := repoimpl.NewTriggerRepository(dbConn)
+	notificationRepository := repoimpl.NewNotificationRepository(dbConn)
 	cleanup := func() {
 		_ = dbConn.Close()
 	}
 
 	authUseCase := usecaseimpl.NewAuthRepository(authRepository, secret)
+	notificationUseCase := usecaseimpl.NewNotificationUseCase(notificationRepository, triggerRepository)
+	triggerUseCase := usecaseimpl.NewTriggerUseCase(triggerRepository)
 
 	authModule := modules.NewAuthModule(authUseCase, secret)
+	notificationModule := modules.NewNotificationModule(notificationUseCase)
+	triggerModule := modules.NewTriggerModule(triggerUseCase)
 
 	router := mux.NewRouter()
 	approuter.Mount(
 		router,
 		authModule.Middlewares(),
 		authModule,
+		notificationModule,
+		triggerModule,
 	)
 
 	return router, cleanup, nil
