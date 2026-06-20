@@ -1,25 +1,33 @@
 package router
 
 import (
-	"net/http"
-
 	"github.com/gorilla/mux"
 )
 
 func Mount(root *mux.Router, protectedMiddlewares []mux.MiddlewareFunc, modules ...Module) {
 	for _, module := range modules {
-		subrouter := root.PathPrefix(module.Path()).Subrouter()
+		moduleRouter := root.PathPrefix(module.Path()).Subrouter()
+		protectedRouter := moduleRouter.NewRoute().Subrouter()
+
+		if len(protectedMiddlewares) > 0 {
+			protectedRouter.Use(protectedMiddlewares...)
+		}
+		if len(module.Middlewares()) > 0 {
+			protectedRouter.Use(module.Middlewares()...)
+		}
 
 		for _, route := range module.Routes() {
-			handler := http.Handler(route.Handler)
-
+			routeRouter := moduleRouter
 			if !route.Public {
-				for i := len(protectedMiddlewares) - 1; i >= 0; i-- {
-					handler = protectedMiddlewares[i](handler)
-				}
+				routeRouter = protectedRouter
 			}
 
-			subrouter.Handle(route.Path, handler).Methods(route.HttpMethods...)
+			if len(route.Middlewares) > 0 {
+				routeRouter = routeRouter.NewRoute().Subrouter()
+				routeRouter.Use(route.Middlewares...)
+			}
+
+			routeRouter.Handle(route.Path, route.Handler).Methods(route.HttpMethods...)
 		}
 	}
 }
